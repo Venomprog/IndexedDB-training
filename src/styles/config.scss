@@ -1,0 +1,55 @@
+@use 'sass:map';
+
+@use 'sass:math';
+
+@use 'sass:string';
+
+@function rem($size) {
+  @return math.div($size, $fs) * 1rem;
+}
+
+// transitions
+$transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+$transition-duration: 0.5s;
+$transition: $transition-duration $transition-timing-function;
+
+// fonts
+$fs: 16px;
+$font: 'Roboto';
+$font-extra: 'Montserrat';
+
+//Custom placeholder
+$custom-placeholder-top: rem(12px);
+$custom-placeholder-left: rem(24px);
+$custom-placeholder-scale: 0.6;
+
+//Custom placeholder
+
+$breakpoints: (
+  xxl: 1920px,
+  ll: 1440px,
+  d: 1201px,
+  t: 1024px,
+  lg: 992px,
+  m: 768px,
+  s: 576px,
+  xs: 375px
+);
+//Количество колонок
+$col-count-m: 4;
+$col-count-t: 4;
+$col-count-d: 16;
+
+//Количество колонок
+
+//Боковые отступы по краям
+$col-pad-m: rem(12px);
+$col-pad-t: rem(12px);
+$col-pad-d: rem(24px);
+
+//Боковые отступы по краям
+
+//Промежутки между колонками
+$col-gap-m: rem(12px);
+$col-gap-t: rem(12px);
+$col-gap-d: rem(24px);

@@ -1,0 +1,56 @@
+.ui-switch {
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &__label {
+    user-select: none;
+
+    &:first-child {
+      color: $primary1;
+    }
+  }
+
+  &__body {
+    position: relative;
+
+    width: 46px;
+    padding: 2px;
+
+    border: 1px solid $primary1;
+    border-radius: 20px;
+
+    &::before {
+      content: '';
+
+      display: block;
+
+      width: 20px;
+      height: 20px;
+
+      background-color: $primary1;
+      border-radius: 50%;
+
+      transition: 0.3s;
+    }
+  }
+
+  &_active {
+    .ui-switch__label {
+      &:first-child {
+        color: inherit;
+      }
+
+      &:last-child {
+        color: $primary1;
+      }
+    }
+
+    .ui-switch__body {
+      &::before {
+        transform: translate(100%);
+      }
+    }
+  }
+}

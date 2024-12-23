@@ -1,0 +1,97 @@
+.accordion {
+  $comp: &;
+
+  box-sizing: border-box;
+  padding-block: rem(40px);
+  background-color: #ffffff;
+  border-block: rem(1px) solid #e8e7e7;
+
+  @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-block: rem(1px) solid $pink;
+      transition: $transition;
+      #{$comp}__button {
+        color: $pink;
+      }
+    }
+  }
+
+  &.active {
+    border-block: rem(1px) solid $pink;
+
+    .accordion__panel {
+      visibility: visible;
+    }
+    #{$comp}__button {
+      color: $pink;
+    }
+  }
+
+  &__header {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    width: rem(60px);
+    height: rem(60px);
+
+    @media #{media('>',t)} and (hover: hover) and (pointer: fine) {
+      &:hover {
+        //transform: rotate(45deg);
+
+        svg {
+          path {
+            stroke: $pink;
+          }
+        }
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    font: $font;
+    font-size: rem(32px);
+    font-weight: 800;
+    color: $black;
+    text-align: left;
+
+    border: 0;
+
+    transition: $transition;
+
+    &:focus {
+      color: $black;
+    }
+  }
+
+  &__panel {
+    overflow: hidden;
+    transition: $transition;
+
+    &-text {
+      padding-top: rem(20px);
+    }
+  }
+}

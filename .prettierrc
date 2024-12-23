@@ -1,0 +1,32 @@
+{
+  "plugins": [
+    "@prettier/plugin-pug",
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindConfig": "tailwind.config.js",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "css",
+  "singleAttributePerLine": true,
+
+  "pugAttributeSeparator": "always",
+  "pugWrapAttributesThreshold": 3,
+  "pugIdNotation": "literal",
+  "pugClassNotation": "as-is",
+  "pugEmptyAttributes": "all",
+  "pugEmptyAttributesForceQuotes": [],
+  "pugExplicitDiv": false,
+
+  "importOrder": ["^builtin", "^external", "^internal", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

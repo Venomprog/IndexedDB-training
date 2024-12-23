@@ -1,0 +1,32 @@
+@use 'sass:map';
+
+:root {
+  --primary1: teal;
+  --pink: #ffc0cb;
+
+  // fonts
+  --font: 'Roboto', 'Arial', sans-serif;
+  --black: #0c0c0c;
+  // colors
+  --background1: #f2f2f2;
+}
+
+// fonts
+$font: var(--font);
+// colors
+$background1: var(--background1);
+$black: var(--black);
+$primary1: var(--primary1);
+$pink: var(--pink);
+$colors: (
+  black: #000000
+);
+
+@function color($variant: black) {
+  @return map.get($colors, $variant);
+}
+
+// media
+$mediaWidthLaptop: 1340px;
+$mediaWidthTablet: 767px;
+$mediaWidthMobile: 320px;

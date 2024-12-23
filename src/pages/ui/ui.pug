@@ -1,0 +1,68 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'ui'
+    const pageTitle = 'ui'
+
+block content
+  main.ui-page(data-barba='container', data-barba-namespace=pageName)
+    .inner
+      br
+      br
+      br
+      //- +rem-select(ordersSelectProps3)(placeholder='Область применения')
+      br
+      br
+      br
+
+      form.contacts-form__form(data-form-id='main-form', action='#')
+        .contacts-form__row
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Имя *',
+              name='fio',
+              required='',
+              data-validate='text-only'
+            )
+          p.font-bold Только русские буквы
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Имя *',
+              name='fio',
+              required='',
+              data-validate='text-cyrillic'
+            )
+          .contacts-form__item
+            +ui-input-rem#contacts-form1(
+              type='text',
+              placeholder='Никнейм *',
+              name='nickname',
+              required='',
+              data-validate='text'
+            )
+
+        .contacts-form__row
+          .contacts-form__item
+            +ui-input-rem#contacts-form2(
+              type='email',
+              required='',
+              placeholder='Email *',
+              data-validate='email',
+              name='email',
+              minlength='3'
+            )
+
+        .contacts-form__row
+          .contacts-form__item
+            +ui-input-rem#contacts-form3(
+              type='tel',
+              data-mask-phone='',
+              placeholder='Телефон *',
+              name='phone',
+              required='',
+              data-validate='tel'
+            )
+        button(type='submit') Send

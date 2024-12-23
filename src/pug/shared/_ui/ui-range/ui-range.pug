@@ -1,0 +1,18 @@
+mixin ui-range(mods)
+  -
+    const baseName = 'ui-range'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-range(class=allMods)&attributes(attributes)
+    .ui-range__value
+      .ui-range__lower
+      .ui-range__upper
+    .ui-range__body
+    block

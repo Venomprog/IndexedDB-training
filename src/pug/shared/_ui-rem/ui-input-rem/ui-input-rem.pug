@@ -1,0 +1,7 @@
+mixin ui-input-rem(mods)
+  .ui-input.custom-placeholder(data-input-parent='')
+    input(data-input='', name=name ? name : '')&attributes(attributes)
+    .custom-placeholder__service
+    span
+      | #{ attributes.placeholder }
+    .ui-input__error(data-error-container='')

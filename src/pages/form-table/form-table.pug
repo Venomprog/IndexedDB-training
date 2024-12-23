@@ -1,0 +1,67 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'form-table'
+    const pageTitle = 'form-table'
+
+block content
+  main(data-barba='container' data-barba-namespace=pageName)
+    .main-wrapper
+      .container 
+        .content 
+          form.form(novalidate data-add-form)
+            .form-row 
+              h2.form-title Добавление пользователя
+            .form-row 
+              .form-input 
+                input(placeholder="Имя" type="text" data-add-form-name)
+              .form-input 
+                input(placeholder="E-mail" type="email" data-add-form-email)
+            .form-row 
+              button.form-button(type="submit") Добавить юзера
+            .form-row 
+              .form-error(data-add-form-error) Ошибка создания: Пользователь с таким E-mail уже существует
+      .container 
+        .content 
+          form.form(novalidate data-edit-form)
+            .form-row 
+              h2.form-title Обновить данные пользователя
+            .form-row 
+              .form-input 
+                input(placeholder="ID" type="text" data-edit-form-id)
+            .form-row 
+              .form-input 
+                input(placeholder="Имя" type="text" data-edit-form-name)
+              .form-input 
+                input(placeholder="E-mail" type="email" data-edit-form-email)
+            .form-row 
+              button.form-button(type="submit") Обновить данные
+            .form-row 
+              .form-error(data-add-form-error) Ошибка создания: Пользователь с таким E-mail уже существует
+      .container 
+        .content 
+          form.form(novalidate data-delete-form)
+            .form-row 
+              h2.form-title Удаление пользователя
+            .form-row 
+              .form-input 
+                input(placeholder="ID" type="text" data-delete-form-id)
+            .form-row 
+              button.form-button(type="submit") Удалить юзера
+            .form-row 
+              .form-error(data-delete-form-error) Ошибка создания: Пользователь с таким ID не существует
+      .container 
+        .content 
+          form.form(novalidate data-filter-form)
+            .form-row 
+              h2.form-title Фильтр по имени
+            .form-row 
+              .form-input 
+                input(placeholder="Имя" type="text" data-filter-form-name)
+            .form-row 
+              button.form-button(type="submit") Фильтровать
+            .form-row 
+              button.form-button(type="button" data-refresh-filter) Сброс фильтра
+    .container 
+      .user-list(data-user-list) 

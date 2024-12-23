@@ -1,0 +1,31 @@
+@import '../../node_modules/tailwindcss/base.css';
+@import '../../node_modules/tailwindcss/components.css';
+@import '../../node_modules/tailwindcss/utilities.css';
+@import '../../node_modules/normalize.css/normalize.css';
+
+// Импорты с модулей
+
+@import '../js/libs/lenis/style';
+@import '../js/libs/css-debug/style';
+
+// DT
+// @import '../../node_modules/tippy.js/dist/tippy.css';
+// @import '../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
+// @import '../../node_modules/flatpickr/dist/flatpickr.min.css';
+// @import '../../node_modules/nouislider/dist/nouislider.min.css';
+// @import '../../node_modules/tom-select/dist/css/tom-select.min.css';
+// @import '../../node_modules/swiper/swiper-bundle.min.css';
+
+@import 'base/reset';
+@import './config';
+@import 'base/fonts';
+@import 'base/core';
+@import 'base/base';
+@import 'utils/variables';
+@import 'base/media';
+@import './components/**/*';
+@import '../layout/layout';
+
+// BLOCKS
+
+@import '../pug/**/*';

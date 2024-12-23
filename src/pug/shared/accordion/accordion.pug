@@ -1,0 +1,19 @@
+//- //https://michu2k.github.io/Accordion/
+
+mixin accordion(text)
+  .accordion-container
+    .accordion
+      h2.accordion__header
+        button.accordion__button(type='button')= text
+        button.accordion__close
+          +close
+      .accordion__panel
+        block
+        //- p.accordion__panel-text.text-20 
+        //-   |Платформа LUP — это профессиональный инструмент для поиска блогеров и проверки их статистики, а также<br> для автоматического отслеживания статистики публикаций. А бот LUP — это отличный инструмент для быстрого получения статистики по уже найденным блогерам.
+
+    //- .accordion
+    //-   h2.ac-header
+    //-     button.accordion__button(type="button") Lorem ipsum dolor sit amet.
+    //-   .accordion__panel
+    //-     p.ac-text Lorem ipsum dolor sit amet, consectetur adipiscing elit.

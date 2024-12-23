@@ -1,0 +1,63 @@
+.css-debug {
+  position: fixed;
+  z-index: 99999;
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 10px;
+
+  font:
+    16px/1 Roboto,
+    sans-serif;
+
+  opacity: 0.2;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #000000;
+
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  label {
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &-one-child {
+    div > div:first-child:last-child,
+    div :has(> div:first-child:last-child) {
+      padding: 1px;
+      border: 1px solid red;
+    }
+  }
+
+  &-border-all {
+    *:not(.css-debug) > div {
+      border: 1px solid red;
+    }
+  }
+
+  &-inline {
+    *[style] {
+      background-color: red;
+    }
+  }
+}

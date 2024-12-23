@@ -1,0 +1,14 @@
+{
+  "disallowIdAttributeWithStaticValue": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
+  "disallowMultipleLineBreaks": true,
+  "requireStrictEqualityOperators": true,
+  "requireSpecificAttributes": [{ "img": ["alt"] }],
+  "validateIndentation": 2,
+  "validateMultiLineAttributes": {
+    "maximum": 3
+  },
+  "disallowInlineJavaScript": true,
+  "disallowInlineStyles": true,
+  "ignoreFiles": ["node_modules/**", "src/pug/shared/svg/svg.pug"]
+}

@@ -1,0 +1,7 @@
+mixin rem-input(name)
+  .input-ui.custom-placeholder(data-input-parent='')
+    input(data-input='', required='', name=name ? name : '')&attributes(attributes)
+    .custom-placeholder__service
+      span
+        | #{ attributes.placeholder }
+      +reset.custom-placeholder__reset

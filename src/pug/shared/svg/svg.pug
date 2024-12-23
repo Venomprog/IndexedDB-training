@@ -1,0 +1,40 @@
+mixin reset
+  svg(
+    class=attributes.class,
+    xmlns='http://www.w3.org/2000/svg',
+    width='18',
+    height='18',
+    viewBox='0 0 48 48',
+    fill='none'
+  )
+    path(
+      d='M18.15 18.15L29.85 29.85',
+      stroke='#A5B7B3',
+      stroke-width='2',
+      stroke-linecap='round',
+      stroke-linejoin='round'
+    )
+    path(
+      d='M18.15 29.85L29.85 18.15',
+      stroke='#A5B7B3',
+      stroke-width='2',
+      stroke-linecap='round',
+      stroke-linejoin='round'
+    )
+mixin tick
+  svg(
+    width='24',
+    height='24',
+    viewBox='0 0 24 24',
+    fill='none',
+    xmlns='http://www.w3.org/2000/svg'
+  )
+    path(
+      d='M20 7L14.6093 13.4688C12.4732 16.0322 11.4051 17.3139 10 17.3139C8.59488 17.3139 7.52681 16.0322 5.39067 13.4688L4 11.8',
+      stroke='#62215B',
+      stroke-width='2',
+      stroke-linecap='round'
+    )
+mixin arrow-bottom
+  svg(width='28', height='28', viewBox='0 0 28 28', fill='none', xmlns='http://www.w3.org/2000/svg')
+    path(d='M16 17L11 22M11 22L6 17M11 22L11 10C11 8.93913 11.4214 7.92172 12.1716 7.17157C12.9217 6.42143 13.9391 6 15 6L22 6', stroke='#5C5772', stroke-linecap='round', stroke-linejoin='round')

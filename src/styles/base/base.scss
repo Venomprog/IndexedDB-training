@@ -1,0 +1,9 @@
+a {
+  color: black;
+}
+
+body {
+  &.overflow-scroll {
+    overflow: hidden;
+  }
+}

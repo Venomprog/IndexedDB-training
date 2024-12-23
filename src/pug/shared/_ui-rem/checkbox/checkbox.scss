@@ -1,0 +1,82 @@
+.checkbox {
+  .container {
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+    gap: rem(12px);
+    align-items: center;
+    justify-content: start;
+
+    height: rem(24px);
+    padding: 0;
+
+    font-family: 'TT Rounds Neue';
+    font-size: rem(20px);
+    font-weight: 420;
+    line-height: 110%; /* 19.8px */
+    color: var(--1, #62215b);
+
+    transition: $transition;
+
+    @media #{media('>',d)} {
+      &:hover {
+        .checkmark {
+          border: rem(2px) solid var(--unnamed, #62215b);
+        }
+      }
+    }
+  }
+
+  .container input {
+    cursor: pointer;
+
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    opacity: 0;
+  }
+
+  .checkmark {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    width: rem(24px);
+    height: rem(24px);
+
+    background: var(--, #ffffff);
+    border: rem(2px) solid var(--unnamed, #f0e7ef);
+    border-radius: rem(4px);
+
+    transition: $transition;
+
+    svg {
+      flex-shrink: 0;
+
+      width: rem(16px);
+      height: rem(16px);
+
+      opacity: 0;
+
+      transition: $transition;
+
+      path {
+        stroke: white;
+      }
+    }
+  }
+
+  .container input:checked ~ .checkmark {
+    background-color: #62215b;
+    border: rem(2px) solid var(--unnamed, #62215b);
+
+    svg {
+      opacity: 1;
+    }
+  }
+}

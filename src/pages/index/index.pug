@@ -1,0 +1,24 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageTitle = 'Index'
+
+block content
+  main(data-barba='container', data-barba-namespace=pageName)
+    .inner
+      h1= pageName
+
+      br
+      br
+      br
+      a(href='blocks.html') Repository blocks
+      br
+      br
+      a(href='main.html') Main
+      br
+      br
+      a(href='ui.html') UI
+      br
+      br
+      a(href='form-table.html') Первая задача

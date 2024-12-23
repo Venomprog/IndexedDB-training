@@ -1,0 +1,26 @@
+image: node:16.17.0
+
+stages:
+  - deploy
+
+before_script:
+  - npm i --force
+
+pages:
+  stage: deploy
+  cache:
+    key: modules-cache-${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+  script:
+    - npm run build
+    - mkdir -p public/${CI_COMMIT_REF_SLUG}
+    - mv dist/* public/${CI_COMMIT_REF_SLUG}
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+      when: always
+    - if: $CI_COMMIT_REF_NAME != "main"
+      when: always

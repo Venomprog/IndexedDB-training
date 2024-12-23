@@ -1,0 +1,55 @@
+//- //Для добавления мобильной версии картинки добавляем вторым параметром разрешение, на котором будет происходить смена картинки, либо true. По дефолту - 768px
+//- //Например, +picture('image.jpg', 375), +picture('image.jpg', '375'), +picture('image.jpg', 'true'), +picture('image.jpg', true)
+//- //Миксин будет искать картинку с названием image-mob.jpg (тоесть вторая картинка должна иметь такое же название как и основная, только с добавлением -mob.png/jpg и тд)
+
+mixin picture(fileName, mobileBreakpoint)
+  -
+    var file = {
+      getTitle(filename) {
+        var segments = filename.split('.');
+        segments.pop();
+        return segments.join('.');
+      },
+      getExtension(filename) {
+        return filename.split('.').pop();
+      },
+      getPath(title, extension) {
+        return `../../images/${title}.${extension}`;
+      },
+    };
+    var fileTitle = file.getTitle(fileName);
+    var fileExtension = file.getExtension(fileName);
+
+  picture.picture&attributes(attributes)
+    if mobileBreakpoint
+      -
+        var breakpoint = (Number(mobileBreakpoint) > 1 )?`(max-width: ${Number(mobileBreakpoint)}px)`:  "(max-width: 768px)" 
+      source.lazyload(
+        type='image/webp',
+        srcset=`${file.getPath(fileTitle + '-mob', "webp")} `,
+        media=breakpoint
+      )
+      if fileExtension === 'png'
+        source.lazyload(
+          type='image/png',
+          srcset=`${file.getPath(fileTitle + '-mob', "png")} `,
+          media=breakpoint
+        )
+      else
+        source.lazyload(
+          type='image/jpeg',
+          srcset=`${file.getPath(fileTitle + '-mob', "jpg")} `,
+          media=breakpoint
+        )
+
+    source.lazyload(type='image/webp', srcset=`${file.getPath(fileTitle, "webp")} `)
+    if fileExtension === 'png'
+      source.lazyload(type='image/png', srcset=`${file.getPath(fileTitle, "png")} `)
+    else
+      source.lazyload(type='image/jpeg', srcset=`${file.getPath(fileTitle, "jpg")} `)
+
+    img.picture__img.lazyload(
+      src=`${file.getPath(fileTitle, fileExtension)}`,
+      data-src=`${file.getPath(fileTitle, fileExtension)}`,
+      alt=fileName
+    )

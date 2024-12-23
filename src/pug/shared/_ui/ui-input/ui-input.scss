@@ -1,0 +1,53 @@
+.ui-input {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 15px 20px;
+
+    background: #ffffff;
+    border: 1px solid $primary1;
+    border-radius: 6px;
+    outline: none;
+
+    &.filled ~ label,
+    &:focus ~ label {
+      bottom: 100%;
+
+      > div {
+        font-size: 10px;
+      }
+    }
+  }
+
+  label {
+    pointer-events: none;
+
+    position: absolute;
+    bottom: 50%;
+    left: 15px;
+    transform: translateY(50%);
+
+    display: block;
+
+    padding: 3px 5px;
+
+    color: #b2b2b2;
+
+    background-color: #ffffff;
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+    > div {
+      transition: inherit;
+    }
+  }
+
+  .just-validate-error-label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font: 12px/1.2 $font;
+  }
+}

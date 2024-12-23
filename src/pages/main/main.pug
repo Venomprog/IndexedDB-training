@@ -1,0 +1,12 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'main'
+    const pageTitle = 'Main'
+
+block content
+  main(data-barba='container', data-barba-namespace=pageName)
+    .inner
+      h1= pageName
+      +rem-input

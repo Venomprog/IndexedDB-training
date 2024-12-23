@@ -1,0 +1,23 @@
+.user-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+  width: rem(900px);
+  margin: 0 auto;
+
+  border: 2px solid lightseagreen;
+  padding: rem(20px);
+
+
+  &__row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(20px);
+
+    &-col{
+      font-size: rem(16px);
+      font-weight: 500;
+    }
+  }
+}

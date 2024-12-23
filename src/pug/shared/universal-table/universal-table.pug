@@ -1,0 +1,32 @@
+mixin universal-table(data, mods)
+  -
+    const baseName = 'universal-table'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .universal-box
+    .universal-table(class=allMods)&attributes(attributes)
+      table
+        if data.thead
+          thead.universal-table__head
+            each itemTr in data.thead
+              tr
+                each itemTh in itemTr.th
+                  th(colspan=itemTh.colspan, rowspan=itemTh.rowspan, class=itemTh.mods) !{ itemTh.text }
+        tbody.universal-table__body
+          each itemTr in data.tbody
+            tr(class=itemTr.class)
+              each itemTd in itemTr.td
+                td(
+                  colspan=itemTd.colspan,
+                  rowspan=itemTd.rowspan,
+                  class=itemTd.mods,
+                  style=itemTd.style
+                ) !{ itemTd.text }
+    block

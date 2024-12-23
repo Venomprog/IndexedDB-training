@@ -1,0 +1,52 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "plugins": ["import"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "no-var": "error",
+    "no-undef": "warn",
+    "prefer-const": "warn",
+    "complexity": ["warn", { "max": 15 }],
+    "no-inner-declarations": "off",
+    "import/no-unresolved": "warn",
+    "import/named": "warn",
+    "no-useless-escape": 1, // Измените на 1 для предупреждения
+    "import/no-duplicates": "error",
+    "import/order": [
+      "warn",
+      {
+        "groups": [["builtin", "external"], "internal"],
+        "newlines-between": "always"
+      }
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.{js,mjs,cjs,ts,tsx}"]
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "gulpfile.js",
+    "**/*.config.{js,mjs,cjs,ts,tsx}",
+    "*.config.{js,mjs,cjs,ts,tsx}"
+  ]
+}

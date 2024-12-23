@@ -1,0 +1,86 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    position: relative;
+
+    width: 34px;
+    height: 34px;
+
+    font: 14px/34px $font;
+    color: $black;
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 4px;
+
+    transition: 0.3s;
+
+    @include media-hover {
+      color: $primary1;
+    }
+
+    &_prev,
+    &_next {
+      background: $primary1;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 10px;
+        height: 14px;
+
+        color: #ffffff;
+      }
+    }
+
+    &_next {
+      svg {
+        transform: rotate(180deg) translate(50%, 50%);
+      }
+    }
+
+    &_disabled {
+      cursor: default;
+      background: 0;
+      border: 1px solid #d6d6d6;
+      box-shadow: -6px -6px 12px rgba(255 255 255 / 10%);
+
+      @include media-hover {
+        background: inherit;
+
+        svg {
+          color: #d6d6d6;
+        }
+      }
+
+      svg {
+        color: #d6d6d6;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin: 0 20px;
+  }
+
+  &__item {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_active {
+      .pagination__link {
+        cursor: default;
+        color: $primary1;
+      }
+    }
+  }
+}

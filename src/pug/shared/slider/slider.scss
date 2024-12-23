@@ -1,0 +1,9 @@
+.slider {
+  &__ui-svg {
+    transition: 0.3s;
+
+    @include media-hover {
+      color: $primary1;
+    }
+  }
+}

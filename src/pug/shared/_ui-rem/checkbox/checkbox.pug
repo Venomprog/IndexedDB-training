@@ -1,0 +1,7 @@
+mixin checkbox(text)
+  .checkbox
+    label.container
+      input(type='checkbox')&attributes(attributes)
+      span.checkmark
+        +tick
+      p= text

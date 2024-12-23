@@ -1,0 +1,20 @@
+mixin ui-switch(data, mods)
+  -
+    const baseName = 'ui-switch'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-switch(class=allMods)&attributes(attributes)
+    if data
+      each item, index in data
+        if item.p3
+          +ui-p3(item.p3, item.p3mods).ui-switch__label
+        if index === 0
+          .ui-switch__body
+    block

@@ -1,0 +1,10 @@
+mixin rem-select(options)
+  .select.select-wrapper
+    .select__button
+      input(type='text', readonly='', required='')&attributes(attributes)
+      +arrow-bottom
+    .select__list
+      ul
+        each i in options
+          li
+            p= i
