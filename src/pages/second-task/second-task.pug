@@ -1,0 +1,10 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'second-task'
+    const pageTitle = 'second-task'
+
+block content
+  main(data-barba='container' data-barba-namespace=pageName)
+    +second-task

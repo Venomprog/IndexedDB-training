@@ -62,6 +62,8 @@
     "@barba/core": "^2.10.3",
     "@fancyapps/ui": "^5.0.36",
     "accordion-js": "^3.3.4",
+    "axios": "^1.7.9",
+    "dexie": "^4.0.10",
     "flatpickr": "^4.6.13",
     "imask": "7.6.1",
     "inputmask": "^5.0.9",

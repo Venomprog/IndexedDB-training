@@ -1,5 +1,6 @@
 export const formTablePageInit = () => {
     const addForm = document.querySelector('[data-add-form]');
+    if (!addForm) return
     const addFormError = document.querySelector('[data-add-form-error]');
     const deleteForm = document.querySelector('[data-delete-form]');
     const deleteFormError = document.querySelector('[data-delete-form-error]');

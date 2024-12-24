@@ -2,6 +2,7 @@
 
 import '../styles/style.scss'
 import { formTablePageInit } from './components/IndexDB-1'
+import { secondTaskInit } from './components/IndexDB-2'
 
 
 export const commonFunction = () => {
@@ -11,4 +12,7 @@ export const commonFunction = () => {
 }
 
 
-window.addEventListener('load', commonFunction)
+window.addEventListener('load', () => {
+  commonFunction()
+  secondTaskInit()
+})

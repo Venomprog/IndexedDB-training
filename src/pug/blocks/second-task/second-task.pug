@@ -1,0 +1,19 @@
+mixin second-task(mods)
+  .second-task(class=allMods)&attributes(attributes)
+    <div class="container product-form" data-product-form>
+        <h1>Список продуктов</h1>
+
+        <div class="filters">
+            <input type="text" id="search-input" placeholder="Поиск по названию...">
+            <select id="category-select">
+                <option value="all">Все категории</option>
+                <option value="electronics">Электроника</option>
+                <option value="jewelery">Ювелирные изделия</option>
+                <option value="men's clothing">Одежда для мужчин</option>
+                <option value="women's clothing">Одежда для женщин</option>
+            </select>
+            <button id="update-button">Обновить данные</button>
+        </div>
+
+        <div id="product-list" class="product-list"></div>
+    </div> 
